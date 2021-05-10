@@ -2,4 +2,4 @@
 
 docker-compose up
 
-Acessar o browser : http://localhost:8000/
+Acessar o browser : http://localhost:8080/
