@@ -1,0 +1,33 @@
+version: '3.7'
+
+#para roder os services abaixo
+#docker-compose up -d
+
+#para terminar os services abaixo
+#docker-compose down 
+
+services:
+  
+  database:
+    image: igor86/node-db
+    container_name: node-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    
+  
+  backend:
+    image: igor86/node-web-app
+    container_name: api
+    restart: always
+
+  nginx:
+    image: igor86/node-nginx
+    container_name: nginx
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+    restart: always
+    
+
